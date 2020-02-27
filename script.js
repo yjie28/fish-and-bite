@@ -38,36 +38,48 @@ const startGame = (e) => {
   console.log(random4Nums);
 }
 
-
-// checks if the number is within 1 - 8
-const checkRange = (num) => {
-  return (num > 0 && num < 9) ? true : false;
-}
-
 const incrementNumber = (e) => {
   let currentNumber;
 
   if (e === "first-number") {
     currentNumber = Number(firstNumber.innerHTML);
-    if (checkRange(currentNumber) || currentNumber === 0) {
+
+    if (currentNumber === 9) {
+      currentNumber = 0;
+      firstNumber.innerHTML = currentNumber;
+    } else {
       currentNumber += 1;
       firstNumber.innerHTML = currentNumber;
     }
+
   } else if (e === "second-number") {
     currentNumber = Number(secondNumber.innerHTML);
-    if (checkRange(currentNumber) || currentNumber === 0) {
+
+    if (currentNumber === 9) {
+      currentNumber = 0;
+      secondNumber.innerHTML = currentNumber;
+    } else {
       currentNumber += 1;
       secondNumber.innerHTML = currentNumber;
     }
+
   } else if (e === "third-number") {
     currentNumber = Number(thirdNumber.innerHTML);
-    if (checkRange(currentNumber) || currentNumber === 0) {
+
+    if (currentNumber === 9) {
+      currentNumber = 0;
+      thirdNumber.innerHTML = currentNumber;
+    } else {
       currentNumber += 1;
       thirdNumber.innerHTML = currentNumber;
     }
   } else if (e === "fourth-number" || currentNumber === 0) {
     currentNumber = Number(fourthNumber.innerHTML);
-    if (checkRange(currentNumber) || currentNumber === 0) {
+
+    if (currentNumber === 9) {
+      currentNumber = 0;
+      fourthNumber.innerHTML = currentNumber;
+    } else {
       currentNumber += 1;
       fourthNumber.innerHTML = currentNumber;
     }
@@ -79,25 +91,42 @@ const decrementNumber = (e) => {
 
   if (e === "first-number") {
     currentNumber = Number(firstNumber.innerHTML);
-    if (checkRange(currentNumber) || currentNumber === 9) {
+
+    if (currentNumber === 0) {
+      currentNumber = 9;
+      firstNumber.innerHTML = currentNumber;
+    } else {
       currentNumber -= 1;
       firstNumber.innerHTML = currentNumber;
     }
+
   } else if (e === "second-number") {
     currentNumber = Number(secondNumber.innerHTML);
-    if (checkRange(currentNumber) || currentNumber === 9) {
+
+    if (currentNumber === 0) {
+      currentNumber = 9;
+      secondNumber.innerHTML = currentNumber;
+    } else {
       currentNumber -= 1;
       secondNumber.innerHTML = currentNumber;
     }
   } else if (e === "third-number") {
     currentNumber = Number(thirdNumber.innerHTML);
-    if (checkRange(currentNumber) || currentNumber === 9) {
+
+    if (currentNumber === 0) {
+      currentNumber = 9;
+      thirdNumber.innerHTML = currentNumber;
+    } else {
       currentNumber -= 1;
       thirdNumber.innerHTML = currentNumber;
     }
   } else if (e === "fourth-number") {
     currentNumber = Number(fourthNumber.innerHTML);
-    if (checkRange(currentNumber) || currentNumber === 9) {
+
+    if (currentNumber === 0) {
+      currentNumber = 9;
+      fourthNumber.innerHTML = currentNumber;
+    } else {
       currentNumber -= 1;
       fourthNumber.innerHTML = currentNumber;
     }
@@ -110,6 +139,8 @@ const guessNumber = () => {
   let thirdNumberGuessed = Number(thirdNumber.innerHTML);
   let fourthNumberGuessed = Number(fourthNumber.innerHTML);
 
+  // let numbersGuessed = [firstNumberGuessed, secondNumberGuessed, thirdNumberGuessed, fourthNumberGuessed];
+
   if (firstNumberGuessed === random4Nums[0] &&
     secondNumberGuessed === random4Nums[1] &&
     thirdNumberGuessed === random4Nums[2] &&
@@ -118,4 +149,5 @@ const guessNumber = () => {
     } else {
       console.log("Please try again!");
     }
+
 }
