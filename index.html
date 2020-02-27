@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="fish.png">
+    <!-- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+    <title>Fish and Bite</title>
+  </head>
+
+  <body>
+
+    <div>
+      <button id="start" onclick="startGame(this)">Start Game!</button>
+    </div>
+
+    <div class="container" style="display:none">
+
+      <div class="box">
+        <button class="arrow-up" onclick='incrementNumber("first-number")'><img src="caret-top.png"></button>
+        <button id="first-number" name="first-number" value="0">0</button>
+        <button class="arrow-down" onclick='decrementNumber("first-number")'><img src="caret-bottom.png"></button>
+      </div>
+
+      <div class="box">
+        <button class="arrow-up" onclick='incrementNumber("second-number")'><img src="caret-top.png"></button>
+        <button id="second-number" name="second-number">0</button>
+        <button class="arrow-down" onclick='decrementNumber("second-number")'><img src="caret-bottom.png"></button>
+      </div>
+
+      <div class="box">
+        <button class="arrow-up" onclick='incrementNumber("third-number")'><img src="caret-top.png"></button>
+        <button id="third-number" name="third-number">0</button>
+        <button class="arrow-down" onclick='decrementNumber("third-number")'><img src="caret-bottom.png"></button>
+      </div>
+
+      <div class="box">
+        <button class="arrow-up" onclick='incrementNumber("fourth-number")'><img src="caret-top.png"></button>
+        <button id="fourth-number" name="fourth-number">0</button>
+        <button class="arrow-down" onclick='decrementNumber("fourth-number")'><img src="caret-bottom.png"></button>
+      </div>
+    </div>
+
+      <button id="guess" style="display:none" onclick="guessNumber()">Guess!</button>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+#first-number, #second-number, #third-number, #fourth-number {
+  width: 70px;
+  height: 70px;
+  font-size: 20px;
+
+  border: outset;
+}
+
+.box {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrow-up, .arrow-down {
+  border: none;
+  width: 50px;
+  height: 50px;
+
+  cursor: pointer;
+}
+
+#guess, #start {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2em;
+
+  width: 100px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 28px;
+  border: outset;
+  cursor: pointer;
+}
+
+#start {
+  width: 200px;
+}
+
+button:focus {
+  outline: none;
+}
