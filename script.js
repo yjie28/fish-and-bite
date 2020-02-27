@@ -9,9 +9,9 @@ const guessButton = document.getElementById("guess");
 const startButton = document.getElementById("start");
 
 
-const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-let random4Nums;
+let secretNumber;
 
 // shuffles numbers in the array (0 - 9)
 const shuffle = (arr) => {
@@ -33,9 +33,9 @@ const startGame = (e) => {
   guessButton.style.display = "block";
   startButton.style.display = "none";
 
-  // generates the 4 random numbers that player is going to guess
-  random4Nums = shuffle(arr);
-  console.log(random4Nums);
+  // generates the 4 secret numbers that player is going to guess
+  secretNumber = shuffle(arr);
+  // console.log(secretNumber);
 }
 
 const incrementNumber = (e) => {
@@ -139,15 +139,24 @@ const guessNumber = () => {
   let thirdNumberGuessed = Number(thirdNumber.innerHTML);
   let fourthNumberGuessed = Number(fourthNumber.innerHTML);
 
-  // let numbersGuessed = [firstNumberGuessed, secondNumberGuessed, thirdNumberGuessed, fourthNumberGuessed];
+  let numbersGuessed = [firstNumberGuessed, secondNumberGuessed, thirdNumberGuessed, fourthNumberGuessed];
 
-  if (firstNumberGuessed === random4Nums[0] &&
-    secondNumberGuessed === random4Nums[1] &&
-    thirdNumberGuessed === random4Nums[2] &&
-    fourthNumberGuessed === random4Nums[3]) {
-      console.log("Congrats you guessed the right number!!!");
-    } else {
-      console.log("Please try again!");
+  const count = {
+    fishes: 0,
+    bites: 0
+  };
+
+  for (let i = 0; i < secretNumber.length; i++) {
+    let searchBite = secretNumber.indexOf(numbersGuessed[i]) != -1;
+    if (secretNumber[i] === numbersGuessed[i]) {
+      count.fishes += 1;
+    } else if (searchBite) {
+      count.bites += 1;
     }
+  }
+
+  console.log(`fishes: ${count.fishes}
+bites: ${count.bites}`);
+
 
 }
