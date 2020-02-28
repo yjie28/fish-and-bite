@@ -8,8 +8,8 @@ const chart = document.querySelector(".chart");
 
 const ul = document.querySelectorAll("ul");
 
-// const guessButton = document.getElementById("guess");
-// const restartButton = document.getElementById("restart");
+const guessButton = document.getElementById("guess");
+
 const options = document.querySelector(".options");
 
 const start = document.querySelector(".start");
@@ -41,9 +41,12 @@ const restartGame = () => {
   if (confirm("Are you sure you want to restart your game? ")) {
 
     // if yes ...
-    
+
     // generate a new number
     secretNumber = shuffle(arr);
+
+    // clear # of guesses
+    numberOfGuesses = 0;
 
     // reset numbers guessed
     firstNumber.innerHTML = 0;
@@ -58,6 +61,7 @@ const restartGame = () => {
 
     // incase if the player is restarting the game after winning...
     winMessage.style.visibility = "hidden";
+    guessButton.disabled = "";
   }
 }
 
@@ -193,7 +197,7 @@ const updatePlayerGuesses = (count, playerGuess) => {
 
   if (fishes === 4) {
     displayWinMessage();
-    // should call a function to display the winning message
+    guessButton.disabled = "true";
   }
 }
 
