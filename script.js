@@ -6,7 +6,12 @@ const fourthNumber = document.getElementById("fourth-number");
 const container = document.querySelector(".container");
 const chart = document.querySelector(".chart");
 
-const guessButton = document.getElementById("guess");
+const ul = document.querySelectorAll("ul");
+
+// const guessButton = document.getElementById("guess");
+// const restartButton = document.getElementById("restart");
+const options = document.querySelector(".options");
+
 const start = document.querySelector(".start");
 
 const winMessage = document.querySelector("h1");
@@ -30,15 +35,42 @@ const shuffle = (arr) => {
   return arr.slice(0, 4);
 }
 
+const restartGame = () => {
+
+  // first make sure the player actually wants to restart game
+  if (confirm("Are you sure you want to restart your game? ")) {
+
+    // if yes ...
+    
+    // generate a new number
+    secretNumber = shuffle(arr);
+
+    // reset numbers guessed
+    firstNumber.innerHTML = 0;
+    secondNumber.innerHTML = 0;
+    thirdNumber.innerHTML = 0;
+    fourthNumber.innerHTML = 0;
+
+    // clear the screen : delete all lis created
+    ul[0].innerHTML = "";
+    ul[1].innerHTML = "";
+    ul[2].innerHTML = "";
+
+    // incase if the player is restarting the game after winning...
+    winMessage.style.visibility = "hidden";
+  }
+}
+
 const startGame = (e) => {
   container.style.display = "";
-  guessButton.style.display = "block";
+  // guessButton.style.display = "block";
+  // restartButton.style.display = "";
+  options.style.display = "";
   chart.style.display = "";
   start.style.display = "none";
 
   // generates the 4 secret numbers that player is going to guess
   secretNumber = shuffle(arr);
-  console.log(secretNumber);
 }
 
 const incrementNumber = (e) => {
@@ -143,8 +175,6 @@ const displayWinMessage = () => {
 const updatePlayerGuesses = (count, playerGuess) => {
   const { fishes, bites } = count;
   const playerGuessStr = playerGuess.join(' ').trim();
-
-  const ul = document.querySelectorAll("ul");
 
   // 1 - number of Guess
   const li1 = document.createElement("li");

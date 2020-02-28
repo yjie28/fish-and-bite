@@ -12,7 +12,7 @@
 
   <body>
 
-    <h1 class="animated tada slow" style="visibility:collapse">You Won!!</h1>
+    <h1 class="animated tada slow" style="visibility:hidden">You Won!!</h1>
 
     <div class="start">
       <p><strong class="important">Fishes and Bites</strong><br>
@@ -54,7 +54,10 @@
       </div>
     </div>
 
-      <button id="guess" style="display:none" onclick="guessNumber()">Guess!</button>
+    <div class="options" style="display:none">
+      <button id="guess" onclick="guessNumber()">Guess!</button>
+      <button id="restart" onclick="restartGame()">Restart Game</button>
+    </div>
 
       <div class="chart" style="display:none">
 

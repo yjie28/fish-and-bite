@@ -96,9 +96,11 @@ li {
   cursor: pointer;
 }
 
-#guess, #start-button {
-  display: block;
-  margin: 0 auto;
+.options {
+  text-align: center;
+}
+
+#guess, #restart, #start-button {
   margin-top: 1.5em;
 
   width: 100px;
@@ -109,7 +111,19 @@ li {
   cursor: pointer;
 }
 
+#guess {
+  margin-right: 25px;
+}
+
+#restart {
+  margin-left: 25px;
+  width: 150px;
+}
+
 #start-button {
+  margin: 0 auto;
+  margin-top: 1.5em;
+  display: block;
   width: 200px;
 }
 
