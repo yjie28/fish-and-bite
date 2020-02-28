@@ -4,14 +4,17 @@ const thirdNumber = document.getElementById("third-number");
 const fourthNumber = document.getElementById("fourth-number");
 
 const container = document.querySelector(".container");
+const chart = document.querySelector(".chart");
 
 const guessButton = document.getElementById("guess");
 const startButton = document.getElementById("start");
 
+const winMessage = document.querySelector("h1");
 
 const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 let secretNumber;
+let numberOfGuesses = 0;
 
 // shuffles numbers in the array (0 - 9)
 const shuffle = (arr) => {
@@ -27,15 +30,15 @@ const shuffle = (arr) => {
   return arr.slice(0, 4);
 }
 
-
 const startGame = (e) => {
   container.style.display = "";
   guessButton.style.display = "block";
+  chart.style.display = "";
   startButton.style.display = "none";
 
   // generates the 4 secret numbers that player is going to guess
   secretNumber = shuffle(arr);
-  // console.log(secretNumber);
+  console.log(secretNumber);
 }
 
 const incrementNumber = (e) => {
@@ -133,30 +136,65 @@ const decrementNumber = (e) => {
   }
 }
 
+const displayWinMessage = () => {
+  winMessage.style.visibility = "";
+}
+
+const updatePlayerGuesses = (count, playerGuess) => {
+  const { fishes, bites } = count;
+  const playerGuessStr = playerGuess.join(' ').trim();
+
+  const ul = document.querySelectorAll("ul");
+
+  // 1 - number of Guess
+  const li1 = document.createElement("li");
+  li1.innerHTML = numberOfGuesses;
+  ul[0].appendChild(li1);
+
+  // 2 - player guess
+  const li2 = document.createElement("li");
+  li2.innerHTML = playerGuessStr;
+  ul[1].appendChild(li2);
+
+  // 3 - fishes and bites
+  const li3 = document.createElement("li");
+  li3.innerHTML = `${fishes} Fishes ${bites} Bites`;
+  ul[2].appendChild(li3);
+
+  if (fishes === 4) {
+    displayWinMessage();
+    // should call a function to display the winning message
+  }
+}
+
 const guessNumber = () => {
+  numberOfGuesses += 1;
+
   let firstNumberGuessed = Number(firstNumber.innerHTML);
   let secondNumberGuessed = Number(secondNumber.innerHTML);
   let thirdNumberGuessed = Number(thirdNumber.innerHTML);
   let fourthNumberGuessed = Number(fourthNumber.innerHTML);
 
-  let numbersGuessed = [firstNumberGuessed, secondNumberGuessed, thirdNumberGuessed, fourthNumberGuessed];
+  let playerGuess = [firstNumberGuessed, secondNumberGuessed,
+    thirdNumberGuessed, fourthNumberGuessed];
 
   const count = {
     fishes: 0,
-    bites: 0
+    bites: 0,
   };
 
   for (let i = 0; i < secretNumber.length; i++) {
-    let searchBite = secretNumber.indexOf(numbersGuessed[i]) != -1;
-    if (secretNumber[i] === numbersGuessed[i]) {
+    let searchBite = secretNumber.indexOf(playerGuess[i]) != -1;
+    if (secretNumber[i] === playerGuess[i]) {
       count.fishes += 1;
     } else if (searchBite) {
       count.bites += 1;
     }
   }
 
-  console.log(`fishes: ${count.fishes}
-bites: ${count.bites}`);
-
-
+  // have a function update the player's current guesses and display it
+  // 1. the number of guesses so far
+  // 2. the player's guess
+  // 3. the current fish and bite count
+  updatePlayerGuesses(count, playerGuess);
 }

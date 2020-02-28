@@ -3,12 +3,16 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="icon" href="fish.png">
+    <link rel="icon" href="./img/fish.png">
     <!-- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=ABeeZee|Spartan|Yeseva+One&display=swap" rel="stylesheet">
     <title>Fish and Bite</title>
   </head>
 
   <body>
+
+    <h1 class="animated tada slow" style="visibility:collapse">You Won!!</h1>
 
     <div>
       <button id="start" onclick="startGame(this)">Start Game!</button>
@@ -17,31 +21,46 @@
     <div class="container" style="display:none">
 
       <div class="box">
-        <button class="arrow-up" onclick='incrementNumber("first-number")'><img src="caret-top.png"></button>
+        <button class="arrow-up" onclick='incrementNumber("first-number")'><img src="./img/caret-top.png"></button>
         <button id="first-number" name="first-number" value="0">0</button>
-        <button class="arrow-down" onclick='decrementNumber("first-number")'><img src="caret-bottom.png"></button>
+        <button class="arrow-down" onclick='decrementNumber("first-number")'><img src="./img/caret-bottom.png"></button>
       </div>
 
       <div class="box">
-        <button class="arrow-up" onclick='incrementNumber("second-number")'><img src="caret-top.png"></button>
+        <button class="arrow-up" onclick='incrementNumber("second-number")'><img src="./img/caret-top.png"></button>
         <button id="second-number" name="second-number">0</button>
-        <button class="arrow-down" onclick='decrementNumber("second-number")'><img src="caret-bottom.png"></button>
+        <button class="arrow-down" onclick='decrementNumber("second-number")'><img src="./img/caret-bottom.png"></button>
       </div>
 
       <div class="box">
-        <button class="arrow-up" onclick='incrementNumber("third-number")'><img src="caret-top.png"></button>
+        <button class="arrow-up" onclick='incrementNumber("third-number")'><img src="./img/caret-top.png"></button>
         <button id="third-number" name="third-number">0</button>
-        <button class="arrow-down" onclick='decrementNumber("third-number")'><img src="caret-bottom.png"></button>
+        <button class="arrow-down" onclick='decrementNumber("third-number")'><img src="./img/caret-bottom.png"></button>
       </div>
 
       <div class="box">
-        <button class="arrow-up" onclick='incrementNumber("fourth-number")'><img src="caret-top.png"></button>
+        <button class="arrow-up" onclick='incrementNumber("fourth-number")'><img src="./img/caret-top.png"></button>
         <button id="fourth-number" name="fourth-number">0</button>
-        <button class="arrow-down" onclick='decrementNumber("fourth-number")'><img src="caret-bottom.png"></button>
+        <button class="arrow-down" onclick='decrementNumber("fourth-number")'><img src="./img/caret-bottom.png"></button>
       </div>
     </div>
 
       <button id="guess" style="display:none" onclick="guessNumber()">Guess!</button>
+
+      <div class="chart" style="display:none">
+
+        <div class="chart-title">
+          <h3></h3>
+          <h3>Your Guess</h3>
+          <h3>Result</h3>
+        </div>
+
+      <div class="chart-content">
+        <ul></ul>
+        <ul></ul>
+        <ul></ul>
+      </div>
+      </div>
 
     <script type="text/javascript" src="script.js"></script>
   </body>
