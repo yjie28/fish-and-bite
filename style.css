@@ -66,6 +66,22 @@ li {
   font-size: 20px;
 }
 
+a {
+  color: inherit;
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+
+  color: white;
+  font-family: 'Montserrat';
+  font-size: 12px;
+}
+
 .container {
   display: flex;
   justify-content: center;
