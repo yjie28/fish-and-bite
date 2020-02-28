@@ -37,32 +37,40 @@ const shuffle = (arr) => {
 
 const restartGame = () => {
 
-  // first make sure the player actually wants to restart game
-  if (confirm("Are you sure you want to restart your game? ")) {
+  // make sure the player actually wants to restart the game
+  swal("Are you sure you want to restart your game? ", {
+    buttons: {
+        yes: true,
+        cancel: "Continue",
+      },
+  })
+  .then((value) => {
+    switch (value) {
+      case "yes":
+        // generate a new number
+        secretNumber = shuffle(arr);
 
-    // if yes ...
+        // clear # of guesses
+        numberOfGuesses = 0;
 
-    // generate a new number
-    secretNumber = shuffle(arr);
+        // reset numbers guessed
+        firstNumber.innerHTML = 0;
+        secondNumber.innerHTML = 0;
+        thirdNumber.innerHTML = 0;
+        fourthNumber.innerHTML = 0;
 
-    // clear # of guesses
-    numberOfGuesses = 0;
+        // clear the screen : delete all lis created
+        ul[0].innerHTML = "";
+        ul[1].innerHTML = "";
+        ul[2].innerHTML = "";
 
-    // reset numbers guessed
-    firstNumber.innerHTML = 0;
-    secondNumber.innerHTML = 0;
-    thirdNumber.innerHTML = 0;
-    fourthNumber.innerHTML = 0;
+        // incase if the player is restarting the game after winning...
+        winMessage.style.visibility = "hidden";
+        guessButton.disabled = "";
 
-    // clear the screen : delete all lis created
-    ul[0].innerHTML = "";
-    ul[1].innerHTML = "";
-    ul[2].innerHTML = "";
-
-    // incase if the player is restarting the game after winning...
-    winMessage.style.visibility = "hidden";
-    guessButton.disabled = "";
-  }
+        break;
+    }
+  })
 }
 
 const startGame = (e) => {
