@@ -1,10 +1,13 @@
-body {
+html, body {
   background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0,
   radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0,
   radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
   background-size: 110px 200px;
   background-repeat: repeat-x;
   overflow-x: hidden;
+
+  height: 100%;
+  margin: 0;
 }
 
 h1 {
@@ -70,12 +73,14 @@ a {
   color: inherit;
 }
 
-footer {
+footer, .push {
   text-align: center;
-  position: fixed;
+  /* position: fixed;
   bottom: 20px;
   left: 0;
-  right: 0;
+  right: 0; */
+
+  height: 50px;
 
   color: white;
   font-family: 'Montserrat';
@@ -86,6 +91,10 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: 2em;
+
+  /* min-height: 100%;
+
+  margin-bottom: -50px; */
 }
 
 #first-number, #second-number, #third-number, #fourth-number {
@@ -145,6 +154,10 @@ footer {
 
 .chart {
   margin-top: 20px;
+
+  min-height: 100%;
+
+  margin-bottom: -50px;
 }
 
 .chart-title, .chart-content {
