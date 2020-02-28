@@ -23,12 +23,26 @@ h3 {
   font-size: 20px;
 }
 
+p {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  color: white;
+  font-size: 20px;
+  text-shadow: 3px 3px 6px #000000;
+}
+
 button {
   font-family: 'ABeeZee';
 }
 
 button:focus {
   outline: none;
+}
+
+.important {
+  font-size: 30px;
+  text-shadow: 3px 3px 12px #0062a9;
 }
 
 img {
@@ -82,7 +96,7 @@ li {
   cursor: pointer;
 }
 
-#guess, #start {
+#guess, #start-button {
   display: block;
   margin: 0 auto;
   margin-top: 1.5em;
@@ -95,7 +109,7 @@ li {
   cursor: pointer;
 }
 
-#start {
+#start-button {
   width: 200px;
 }
 

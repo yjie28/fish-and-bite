@@ -7,7 +7,7 @@ const container = document.querySelector(".container");
 const chart = document.querySelector(".chart");
 
 const guessButton = document.getElementById("guess");
-const startButton = document.getElementById("start");
+const start = document.querySelector(".start");
 
 const winMessage = document.querySelector("h1");
 
@@ -34,7 +34,7 @@ const startGame = (e) => {
   container.style.display = "";
   guessButton.style.display = "block";
   chart.style.display = "";
-  startButton.style.display = "none";
+  start.style.display = "none";
 
   // generates the 4 secret numbers that player is going to guess
   secretNumber = shuffle(arr);

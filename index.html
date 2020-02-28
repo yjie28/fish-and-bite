@@ -7,15 +7,24 @@
     <!-- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=ABeeZee|Spartan|Yeseva+One&display=swap" rel="stylesheet">
-    <title>Fish and Bite</title>
+    <title>Fishes and Bites</title>
   </head>
 
   <body>
 
     <h1 class="animated tada slow" style="visibility:collapse">You Won!!</h1>
 
-    <div>
-      <button id="start" onclick="startGame(this)">Start Game!</button>
+    <div class="start">
+      <p><strong class="important">Fishes and Bites</strong><br>
+        A 4 digit secret number will be generated and your job is to guess the secret number. <br>
+        The number will be in between 0 to 9 and none of the numbers will be repeated. <br>
+        If you guessed a correct number in its correct position, you will get 1 fish. <br>
+        If you guessed a correct number but in its wrong position, you will get 1 bite. <br>
+        Your goal is to get 4 fishes to win the game. <br>
+        If you are ready, click "Start Game!" to begin the game!
+
+        <br>Can you guess the Secret Number?<br></p>
+      <button id="start-button" onclick="startGame(this)">Start Game!</button>
     </div>
 
     <div class="container" style="display:none">
