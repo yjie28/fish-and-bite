@@ -37,6 +37,7 @@ p {
 
 button {
   font-family: 'ABeeZee';
+  color: #48B;
 }
 
 button:focus {
@@ -44,7 +45,7 @@ button:focus {
 }
 
 .important {
-  font-size: 30px;
+  font-size: 40px;
   text-shadow: 3px 3px 12px #0062a9;
 }
 
@@ -75,11 +76,6 @@ a {
 
 footer, .push {
   text-align: center;
-  /* position: fixed;
-  bottom: 20px;
-  left: 0;
-  right: 0; */
-
   height: 50px;
 
   color: white;
@@ -91,10 +87,6 @@ footer, .push {
   display: flex;
   justify-content: center;
   margin-top: 2em;
-
-  /* min-height: 100%;
-
-  margin-bottom: -50px; */
 }
 
 #first-number, #second-number, #third-number, #fourth-number {
@@ -142,7 +134,7 @@ footer, .push {
 
 #restart {
   margin-left: 25px;
-  width: 150px;
+  width: 180px;
 }
 
 #start-button {
@@ -154,9 +146,7 @@ footer, .push {
 
 .chart {
   margin-top: 20px;
-
   min-height: 100%;
-
   margin-bottom: -50px;
 }
 

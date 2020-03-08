@@ -17,15 +17,15 @@
 
     <div class="start">
       <p><strong class="important">Fishes and Bites</strong><br>
-        A 4 digit secret number will be generated and your job is to guess the secret number. <br>
+        Can you guess the Secret Number?<br>
+        <br>A 4 digit secret number will be generated and your job is to guess the secret number. <br>
         The number will be in between 0 to 9 and none of the numbers will be repeated. <br>
-        If you guessed a correct number in its correct position, you will get 1 fish. <br>
-        If you guessed a correct number but in its wrong position, you will get 1 bite. <br>
-        Your goal is to get 4 fishes to win the game. <br>
+        <br>If you guessed a correct number in its correct position, you will get 1 <span style="text-shadow:1px 1px 2px #ff9508">fish</span>. <br>
+        If you guessed a correct number but in its wrong position, you will get 1 <span style="text-shadow:1px 1px 2px #08e4ff">bite</span>. <br>
+        <br>Your goal is to get 4 fishes to win the game. <br>
         If you are ready, click "Start Game!" to begin the game!
-
-        <br>Can you guess the Secret Number?<br></p>
-      <button id="start-button" onclick="startGame(this)">Start Game!</button>
+        </p>
+      <button id="start-button" onclick="startGame(this)" onmousedown="holdButton(this)" onmouseup="releaseHold(this)">Start Game!</button>
 
       <div class="push"></div>
     </div>
@@ -58,14 +58,14 @@
     </div>
 
     <div class="options" style="display:none">
-      <button id="guess" onclick="guessNumber()">Guess!</button>
-      <button id="restart" onclick="restartGame()">Restart Game</button>
+      <button id="guess" onclick="guessNumber()" onmousedown="holdButton(this)" onmouseup="releaseHold(this)">Guess!</button>
+      <button id="restart" onclick="restartGame()" onmousedown="holdButton(this)" onmouseup="releaseHold(this)">Restart Game</button>
     </div>
 
       <div class="chart" style="display:none">
 
         <div class="chart-title">
-          <h3></h3>
+          <h3>#</h3>
           <h3>Your Guess</h3>
           <h3>Result</h3>
         </div>

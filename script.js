@@ -32,6 +32,7 @@ const shuffle = (arr) => {
     arr[i] = arr[j];
     arr[j] = temp;
   }
+  // returns four numbers
   return arr.slice(0, 4);
 }
 
