@@ -1,7 +1,10 @@
-html, body {
-  background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0,
-  radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0,
-  radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
+html,
+body {
+  background: linear-gradient(#ffffff 50%, rgba(255, 255, 255, 0) 0) 0 0,
+    radial-gradient(circle closest-side, #ffffff 53%, rgba(255, 255, 255, 0) 0)
+      0 0,
+    radial-gradient(circle closest-side, #ffffff 50%, rgba(255, 255, 255, 0) 0)
+      55px 0 #48b;
   background-size: 110px 200px;
   background-repeat: repeat-x;
   overflow-x: hidden;
@@ -37,7 +40,7 @@ p {
 
 button {
   font-family: 'ABeeZee';
-  color: #48B;
+  color: #48b;
 }
 
 button:focus {
@@ -58,7 +61,6 @@ img {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-  user-drag: none;
 }
 
 ul {
@@ -74,7 +76,8 @@ a {
   color: inherit;
 }
 
-footer, .push {
+footer,
+.push {
   text-align: center;
   height: 50px;
 
@@ -89,7 +92,10 @@ footer, .push {
   margin-top: 2em;
 }
 
-#first-number, #second-number, #third-number, #fourth-number {
+#first-number,
+#second-number,
+#third-number,
+#fourth-number {
   width: 70px;
   height: 70px;
   font-size: 20px;
@@ -104,7 +110,8 @@ footer, .push {
   align-items: center;
 }
 
-.arrow-up, .arrow-down {
+.arrow-up,
+.arrow-down {
   background: transparent;
   border: none;
   width: 50px;
@@ -117,7 +124,9 @@ footer, .push {
   text-align: center;
 }
 
-#guess, #restart, #start-button {
+#guess,
+#restart,
+#start-button {
   margin-top: 1.5em;
 
   width: 100px;
@@ -150,7 +159,25 @@ footer, .push {
   margin-bottom: -50px;
 }
 
-.chart-title, .chart-content {
+#start-button:hover,
+#guess:hover,
+#restart:hover {
+  color: rgb(83, 165, 228);
+}
+
+#start-button:active,
+#guess:active,
+#restart:active {
+  border: inset;
+
+  transform: translate(
+    0,
+    0.3rem
+  ); /* on the vertical axis, moving the button by 0.3rem */
+}
+
+.chart-title,
+.chart-content {
   display: flex;
   justify-content: space-evenly;
 

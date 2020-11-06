@@ -25,7 +25,7 @@
         <br>Your goal is to get 4 fishes to win the game. <br>
         If you are ready, click "Start Game!" to begin the game!
         </p>
-      <button id="start-button" onclick="startGame(this)" onmousedown="holdButton(this)" onmouseup="releaseHold(this)">Start Game!</button>
+      <button id="start-button" onclick="startGame(this)">Start Game!</button>
 
       <div class="push"></div>
     </div>
@@ -58,8 +58,8 @@
     </div>
 
     <div class="options" style="display:none">
-      <button id="guess" onclick="guessNumber()" onmousedown="holdButton(this)" onmouseup="releaseHold(this)">Guess!</button>
-      <button id="restart" onclick="restartGame()" onmousedown="holdButton(this)" onmouseup="releaseHold(this)">Restart Game</button>
+      <button id="guess" onclick="guessNumber()">Guess!</button>
+      <button id="restart" onclick="restartGame()">Restart Game</button>
     </div>
 
       <div class="chart" style="display:none">

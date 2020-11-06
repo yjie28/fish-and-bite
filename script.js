@@ -86,6 +86,14 @@ const startGame = (e) => {
   secretNumber = shuffle(arr);
 }
 
+const holdButton = (e) => {
+  guessButton.style.border = "inset";
+}
+
+const releaseHold = (e) => {
+  guessButton.style.border = "outset";
+}
+
 const incrementNumber = (e) => {
   let currentNumber;
 
